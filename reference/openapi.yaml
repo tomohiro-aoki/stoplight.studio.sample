@@ -152,12 +152,6 @@ paths:
       description: accountはログインIDかメールアドレスが入る
       parameters: []
       x-internal: false
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../models/Auth.yaml
-            examples: {}
       responses:
         '200':
           description: OK
