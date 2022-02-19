@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.3
 info:
   title: openapi
   description: This is a sample server for a pet store.
@@ -184,14 +184,6 @@ components:
       title: User
       type: object
       description: ''
-      examples:
-        - id: 142
-          firstName: Alice
-          lastName: Smith
-          email: alice.smith@gmail.com
-          dateOfBirth: '1997-10-31'
-          emailVerified: true
-          signUpDate: '2019-08-24'
       properties:
         id:
           type: integer
@@ -256,10 +248,3 @@ components:
           avatar_image_url: 'https://xxx.xxx/test.path'
           avatar_image_thumb_url: 'https://xxx.xxx/test.path'
           token: yJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDgyNjk4MTksInN1YiI6MX0.JU9fHg4pxcJf8kafp5OWeIeiwNvVVDoBdhyx_NNPlYE
-      examples:
-        - id: 0
-          name: string
-          email: string
-          avatar_image_url: string
-          avatar_image_thumb_url: string
-          token: string
