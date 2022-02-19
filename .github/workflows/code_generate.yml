@@ -32,9 +32,11 @@ jobs:
     - uses: docker://openapitools/openapi-generator-cli
       with:
         args: generate -i ./reference/openapi.yaml -g dart -o ./client/
+        
+    
 
     # Create pull request
-    - uses: peter-evans/create-pull-request@v2
+    - uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         path: client
@@ -43,3 +45,4 @@ jobs:
         body: update client
         branch: feature/update_client
         branch-suffix: short-commit-hash # 同じプルリクは作らない
+        draft: true # ドラフトPRにしてくれる
