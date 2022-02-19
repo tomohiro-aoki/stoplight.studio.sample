@@ -1,0 +1,13 @@
+title: Auth
+type: object
+properties:
+  account:
+    type: string
+  password:
+    type: string
+examples:
+  - account: test
+    password: Test1234
+  - account: test1
+    password: Test1234
+description: 認証モデル

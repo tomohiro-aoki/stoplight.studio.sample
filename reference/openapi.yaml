@@ -143,6 +143,46 @@ paths:
                   dateOfBirth: '1996-08-24'
         description: Post the necessary fields for the API to create a new user.
       description: Create a new user.
+  /api/v1/auth:
+    post:
+      summary: ログイン
+      tags:
+        - Auth（認証）
+      operationId: post-api-v1-auth
+      description: accountはログインIDかメールアドレスが入る。
+      parameters: []
+      x-internal: false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: ''
+              x-examples:
+                example-1:
+                  account: test
+                  password: Test1234
+              properties:
+                account:
+                  type: string
+                  minLength: 1
+                password:
+                  type: string
+                  minLength: 1
+              required:
+                - account
+                - password
+            examples:
+              Auth Request:
+                value:
+                  account: test
+                  password: Test1234
+    delete:
+      summary: ログアウト
+      tags:
+        - Auth（認証）
+      responses: {}
+      operationId: delete-api-v1-auth
 components:
   schemas:
     User:
