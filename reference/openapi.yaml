@@ -1,6 +1,11 @@
 openapi: 3.1.0
 info:
   title: openapi
+  description: This is a sample server for a pet store.
+  contact:
+    name: API Support
+    url: 'https://www.example.com/support'
+    email: support@example.com
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'
@@ -39,6 +44,8 @@ paths:
       description: Retrieve the information of the user with the matching user ID.
     patch:
       summary: Update User Information
+      tags:
+        - User(ユーザ)
       operationId: patch-users-userId
       responses:
         '200':
@@ -92,6 +99,8 @@ paths:
   /user:
     post:
       summary: Create New User
+      tags:
+        - User(ユーザ)
       operationId: post-user
       responses:
         '200':
@@ -162,9 +171,12 @@ paths:
                 $ref: '#/components/schemas/AuthLoginResponse'
     delete:
       summary: ログアウト
+      description: ログアウトです
       tags:
         - Auth（認証）
-      responses: {}
+      responses:
+        '200':
+          description: OK
       operationId: delete-api-v1-auth
 components:
   schemas:
