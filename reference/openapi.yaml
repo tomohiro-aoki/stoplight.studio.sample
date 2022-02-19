@@ -157,11 +157,7 @@ paths:
           application/json:
             schema:
               $ref: ../models/Auth.yaml
-            examples:
-              Auth Request:
-                value:
-                  account: test
-                  password: Test1234
+            examples: {}
       responses: {}
     delete:
       summary: ログアウト
