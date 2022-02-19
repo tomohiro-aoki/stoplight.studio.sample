@@ -158,7 +158,14 @@ paths:
             schema:
               $ref: ../models/Auth.yaml
             examples: {}
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthLoginResponse'
     delete:
       summary: ログアウト
       tags:
@@ -207,3 +214,46 @@ components:
         - lastName
         - email
         - emailVerified
+    AuthLoginResponse:
+      description: ''
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          minLength: 1
+        avatar_image_url:
+          type: string
+          minLength: 1
+        avatar_image_thumb_url:
+          type: string
+          minLength: 1
+        token:
+          type: string
+          minLength: 1
+      required:
+        - id
+        - name
+        - email
+        - avatar_image_url
+        - avatar_image_thumb_url
+        - token
+      x-examples:
+        example-1:
+          id: 1
+          name: 山田太郎
+          email: test@example.com
+          avatar_image_url: 'https://xxx.xxx/test.path'
+          avatar_image_thumb_url: 'https://xxx.xxx/test.path'
+          token: yJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDgyNjk4MTksInN1YiI6MX0.JU9fHg4pxcJf8kafp5OWeIeiwNvVVDoBdhyx_NNPlYE
+      examples:
+        - id: 0
+          name: string
+          email: string
+          avatar_image_url: string
+          avatar_image_thumb_url: string
+          token: string
