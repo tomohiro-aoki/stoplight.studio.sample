@@ -38,7 +38,7 @@ jobs:
     # Create pull request
     - uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        token: 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
         path: client
         commit-message: update client
         title: update client
