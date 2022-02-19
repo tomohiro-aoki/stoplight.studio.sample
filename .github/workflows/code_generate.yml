@@ -31,7 +31,7 @@ jobs:
     # openapi generate
     - uses: docker://openapitools/openapi-generator-cli
       with:
-        args: generate -i ./reference/openapi.yaml -g swift5 -o ./client/
+        args: generate -i ./reference/openapi.yaml -g dart -o ./client/
 
     # Create pull request
     - uses: peter-evans/create-pull-request@v2
