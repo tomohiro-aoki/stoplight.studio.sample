@@ -171,7 +171,7 @@ paths:
                 $ref: '#/components/schemas/AuthLoginResponse'
     delete:
       summary: ログアウト
-      description: ログアウトです。
+      description: ログアウトです。。
       tags:
         - Auth（認証）
       responses:
