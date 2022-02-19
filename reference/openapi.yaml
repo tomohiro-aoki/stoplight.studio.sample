@@ -156,27 +156,13 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              description: ''
-              x-examples:
-                example-1:
-                  account: test
-                  password: Test1234
-              properties:
-                account:
-                  type: string
-                  minLength: 1
-                password:
-                  type: string
-                  minLength: 1
-              required:
-                - account
-                - password
+              $ref: ../models/Auth.yaml
             examples:
               Auth Request:
                 value:
                   account: test
                   password: Test1234
+      responses: {}
     delete:
       summary: ログアウト
       tags:
